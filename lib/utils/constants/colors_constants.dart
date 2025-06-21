@@ -27,6 +27,7 @@ class AppColors {
   static const white = Colors.white;
   static const grey = Colors.grey;
   static const black = Colors.black;
+  static const black87 = Colors.black87;
   static const lightBlack = Color.fromARGB(255, 45, 45, 45);
 
   // Chat Screen

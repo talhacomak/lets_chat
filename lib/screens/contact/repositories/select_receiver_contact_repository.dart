@@ -57,7 +57,7 @@ class SelectReceiverContactsRepository {
           arguments: <String, Object>{
             StringsConsts.username: receiverUser.name,
             StringsConsts.userId: receiverUser.uid,
-            StringsConsts.profilePic: receiverUser.profilePic!,
+            StringsConsts.profilePic: receiverUser.profilePic ?? '',
             StringsConsts.isGroupChat: false,
           },
         );

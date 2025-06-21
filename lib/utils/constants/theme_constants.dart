@@ -4,7 +4,7 @@ import 'colors_constants.dart';
 
 final ThemeData appTheme = ThemeData(
   brightness: Brightness.light,
-  primaryColor: AppColors.white,
+  primaryColor: AppColors.black,
   scaffoldBackgroundColor: AppColors.scaffoldBG,
   appBarTheme: _getAppBarTheme(),
   colorScheme: _getCustomColorScheme(),
@@ -17,7 +17,7 @@ AppBarTheme _getAppBarTheme() {
   return AppBarTheme(
     backgroundColor: AppColors.appBar,
     titleTextStyle: GoogleFonts.poppins(
-      color: AppColors.appBarTitle,
+      color: AppColors.black,
       fontSize: 20.0,
     ),
     iconTheme: const IconThemeData(color: AppColors.white),
@@ -53,17 +53,17 @@ TextTheme _getTextTheme() {
       fontWeight: FontWeight.normal,
     ),
     labelMedium: GoogleFonts.poppins(
-      color: AppColors.white,
+      color: AppColors.black, // ✅ Beyaz yerine siyah
       fontSize: 14.0,
       fontWeight: FontWeight.w400,
     ),
     labelSmall: GoogleFonts.poppins(
-      color: AppColors.chatOffWhite,
+      color: AppColors.grey, // chatOffWhite çok açıksa yerine grey gibi bir ton
       fontSize: 12.0,
       fontWeight: FontWeight.w400,
     ),
     displaySmall: GoogleFonts.poppins(
-      color: AppColors.white,
+      color: AppColors.black87, // koyu gri ton
       fontSize: 12.0,
       fontWeight: FontWeight.w500,
     ),

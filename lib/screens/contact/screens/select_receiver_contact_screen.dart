@@ -99,7 +99,7 @@ class _SelectReceiverContactScreenState
         controller: _searchController,
         cursorColor: AppColors.black,
         onChanged: _onChangedText,
-        style: Theme.of(context).textTheme.bodyText1!.copyWith(
+        style: Theme.of(context).textTheme.bodyLarge!.copyWith(
               fontSize: size.width * 0.04,
             ),
         decoration: InputDecoration(
@@ -120,7 +120,7 @@ class _SelectReceiverContactScreenState
                 ),
           contentPadding: const EdgeInsets.symmetric(horizontal: 16.0),
           hintText: 'search by name',
-          hintStyle: Theme.of(context).textTheme.subtitle1!.copyWith(
+          hintStyle: Theme.of(context).textTheme.titleMedium!.copyWith(
                 color: AppColors.grey,
                 fontSize: size.width * 0.04,
               ),

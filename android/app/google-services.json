@@ -1,0 +1,82 @@
+{
+  "project_info": {
+    "project_number": "583361751686",
+    "project_id": "lets-chat-6d76e",
+    "storage_bucket": "lets-chat-6d76e.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:583361751686:android:2394b47f3ae8338aac7f07",
+        "android_client_info": {
+          "package_name": "com.example.lets_chat"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "583361751686-ae6smhlcg1mn647oumd1prngreifsp6i.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDqFNbAlaayjNq9XNiR4-OvUYFXMt4lqjE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "583361751686-ae6smhlcg1mn647oumd1prngreifsp6i.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "583361751686-3r36ojhtrcp2chv3qcf52qtki5j5ebbc.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.letschat.letsChatNew"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:583361751686:android:19d149170a5bdf95ac7f07",
+        "android_client_info": {
+          "package_name": "com.example.lets_chat.lets_chat_new"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "583361751686-ae6smhlcg1mn647oumd1prngreifsp6i.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDqFNbAlaayjNq9XNiR4-OvUYFXMt4lqjE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "583361751686-ae6smhlcg1mn647oumd1prngreifsp6i.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "583361751686-3r36ojhtrcp2chv3qcf52qtki5j5ebbc.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.letschat.letsChatNew"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

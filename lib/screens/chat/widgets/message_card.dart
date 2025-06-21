@@ -40,8 +40,12 @@ class MessageCard extends StatelessWidget {
 
   Widget _buildBody(Size size, BuildContext context) {
     return SwipeTo(
-      onLeftSwipe: swipeDirection == SwipeDirection.left ? onSwipe : null,
-      onRightSwipe: swipeDirection == SwipeDirection.right ? onSwipe : null,
+      onLeftSwipe: swipeDirection == SwipeDirection.left
+          ? (details) => onSwipe()
+          : null,
+      onRightSwipe: swipeDirection == SwipeDirection.right
+          ? (details) => onSwipe()
+          : null,
       child: Align(
         alignment: isSender ? Alignment.centerRight : Alignment.centerLeft,
         child: ConstrainedBox(

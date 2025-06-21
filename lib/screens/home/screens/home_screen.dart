@@ -48,6 +48,9 @@ class _HomeScreenState extends ConsumerState<HomeScreen>
       case AppLifecycleState.paused:
       case AppLifecycleState.detached:
         ref.watch(senderUserDataControllerProvider).setSenderUserState(false);
+      case AppLifecycleState.hidden:
+        // TODO: Handle this case.
+        throw UnimplementedError();
     }
   }
 
