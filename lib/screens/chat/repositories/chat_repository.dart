@@ -310,7 +310,7 @@ class ChatRepository {
     // sender chat
     Chat senderChat = Chat(
       name: receiverUser!.name,
-      profilePic: receiverUser.profilePic!,
+      profilePic: receiverUser.profilePic ?? '',
       userId: receiverUser.uid,
       time: time,
       lastMessage: lastMessage,
@@ -326,7 +326,7 @@ class ChatRepository {
     // receiver chat
     Chat receiverChat = Chat(
       name: senderUser.name,
-      profilePic: senderUser.profilePic!,
+      profilePic: senderUser.profilePic ?? '',
       userId: senderUser.uid,
       time: time,
       lastMessage: lastMessage,
