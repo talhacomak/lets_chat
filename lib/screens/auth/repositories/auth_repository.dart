@@ -7,6 +7,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../../utils/common/widgets/helper_widgets.dart';
 import '../../../utils/constants/routes_constants.dart';
 import '../../../utils/constants/string_constants.dart';
+import 'package:firebase_messaging/firebase_messaging.dart';
 
 /// provider to get AuthRepository.
 final authRepositoryProvider = Provider<AuthRepository>(
@@ -21,6 +22,28 @@ class AuthRepository {
   final FirebaseAuth _auth;
   final FirebaseFirestore _firestore;
 
+  Future<void> saveFcmTokenToFirestore(String uid) async {
+    try {
+      final token = await FirebaseMessaging.instance.getToken();
+
+      if (token != null) {
+        print('🔑 [FCM] Token alındı: $token');
+        print('📍 [FCM] Firestore’a yazılıyor: users/$uid');
+
+        await FirebaseFirestore.instance
+            .collection('users')
+            .doc(uid)
+            .set({'fcmToken': token}, SetOptions(merge: true));
+
+        print('✅ [FCM] Token Firestore’a başarıyla yazıldı.');
+      } else {
+        print('⚠️ [FCM] Token alınamadı (null).');
+      }
+    } catch (e) {
+      print('❌ [FCM] Token Firestore’a yazılamadı: $e');
+    }
+  }
+
   Future<UserCredential?> signInWithGoogle() async {
     final GoogleSignInAccount? googleUser = await GoogleSignIn().signIn();
     if (googleUser == null) return null; // user canceled the sign-in
@@ -31,8 +54,9 @@ class AuthRepository {
       accessToken: googleAuth.accessToken,
       idToken: googleAuth.idToken,
     );
-
-    return await _auth.signInWithCredential(credential);
+    final UserCredential userCredential = await _auth.signInWithCredential(credential);
+    await saveFcmTokenToFirestore(userCredential.user!.uid);
+    return userCredential;
   }
 
   /// Invoke to signIn user with phone number.
@@ -76,6 +100,8 @@ class AuthRepository {
 
       UserCredential userCredential =
           await _auth.signInWithCredential(credential);
+
+      await saveFcmTokenToFirestore(userCredential.user!.uid);
 
       if (userCredential.user != null) {
         if (!mounted) return;

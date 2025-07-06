@@ -11,6 +11,7 @@ import '../../call/controllers/call_controller.dart';
 import '../../call/screens/call_pickup_screen.dart';
 import '../widgets/messages_list.dart';
 import '../widgets/bottom_chat_text_field.dart';
+import '../../../main.dart';
 
 class ChatScreen extends ConsumerStatefulWidget {
   const ChatScreen({super.key});
@@ -21,6 +22,19 @@ class ChatScreen extends ConsumerStatefulWidget {
 
 class _ChatScreenState extends ConsumerState<ChatScreen> {
   late Map<String, Object> userData;
+
+  @override
+  void initState() {
+    super.initState();
+    final receiverId = userData[StringsConsts.userId] as String;
+    activeChatUserId = receiverId;
+  }
+
+  @override
+  void dispose() {
+    activeChatUserId = null;
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {

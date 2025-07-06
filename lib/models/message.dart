@@ -9,6 +9,7 @@ class Message {
     required this.lastMessage,
     required this.messageType,
     required this.time,
+    required this.senderUserName,
     required this.repliedMessage,
     required this.repliedTo,
     required this.repliedMessageType,
@@ -21,6 +22,7 @@ class Message {
   final String lastMessage;
   final MessageType messageType;
   final DateTime time;
+  final String senderUserName;
   final String repliedMessage;
   final String repliedTo;
   final MessageType repliedMessageType;
@@ -34,6 +36,7 @@ class Message {
       'lastMessage': lastMessage,
       'messageType': messageType.type,
       'time': time.millisecondsSinceEpoch,
+      'senderUserName': senderUserName,
       'repliedMessage': repliedMessage,
       'repliedTo': repliedTo,
       'repliedMessageType': repliedMessageType.type,
@@ -49,6 +52,7 @@ class Message {
       lastMessage: map['lastMessage'] as String,
       messageType: (map['messageType'] as String).toEnum(),
       time: DateTime.fromMillisecondsSinceEpoch(map['time'] as int),
+      senderUserName: map['senderUserName'] as String? ?? '',
       repliedMessage: map['repliedMessage'] as String,
       repliedTo: map['repliedTo'] as String,
       repliedMessageType: (map['repliedMessageType'] as String).toEnum(),

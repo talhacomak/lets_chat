@@ -362,14 +362,15 @@ class ChatRepository {
       lastMessage: lastMessage,
       messageType: messageType,
       time: time,
+      senderUserName: senderUsername,
       repliedMessage: replyMessage?.message ?? '',
       repliedTo: replyMessage == null
           ? ''
           : replyMessage.isMe
-              ? senderUsername
-              : receiverUsername ?? '',
+          ? senderUsername
+          : receiverUsername ?? '',
       repliedMessageType:
-          replyMessage == null ? MessageType.text : replyMessage.messageType,
+      replyMessage == null ? MessageType.text : replyMessage.messageType,
     );
 
     if (isGroupChat) {

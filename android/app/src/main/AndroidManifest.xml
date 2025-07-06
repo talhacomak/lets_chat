@@ -9,11 +9,16 @@
     <uses-permission  android:name="android.permission.ACCESS_NETWORK_STATE"  />
     <!-- The Agora SDK requires Bluetooth permissions in case users are using Bluetooth devices.-->
     <uses-permission  android:name="android.permission.BLUETOOTH"  />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS"/>
 
    <application
         android:label="lets_chat"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
+
+       <meta-data
+           android:name="com.google.firebase.messaging.default_notification_channel_id"
+           android:value="default_channel"/>
 
        <meta-data
            android:name="com.google.android.gms.auth.api.signin.v2.SIGN_IN_MODE"
